@@ -1,8 +1,8 @@
 import "dotenv/config";
 const port = process.env.port || 3000;
-let stock = 0;
 
 const HATEOAS = async (entity, data) => {
+  let stock = 0;
   const results = data.map((item) => {
     stock += item.stock;
     return {

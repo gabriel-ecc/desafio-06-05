@@ -3,7 +3,7 @@ import { HATEOAS } from "../helpers/hateoas.js";
 
 const getAllJoyasController = async (req, res) => {
   try {
-    const allJoyas = await getAllJoyas();
+    const allJoyas = await getAllJoyas(req.query);
     const allJoyasWithHateoas = await HATEOAS("joyas", allJoyas);
     res.status(200).json(allJoyasWithHateoas);
   } catch (error) {
