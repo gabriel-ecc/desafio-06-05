@@ -11,7 +11,6 @@ const getAllJoyas = async ({ limits, page, order_by }) => {
     limits,
     offset
   );
-  console.log(queryWithFormat);
   const { rows: joyasResults } = await pool.query(queryWithFormat);
 
   return joyasResults;
@@ -27,7 +26,6 @@ const getJoyasFiltered = async ({
     text: "SELECT id, nombre, categoria, metal, precio, stock FROM inventario WHERE precio <= $1 AND precio >= $2 AND categoria = $3 AND metal = $4",
     values: [precio_max, precio_min, categoria, metal],
   };
-  console.log(sqlQuery);
   const result = await pool.query(sqlQuery);
   return result.rows;
 };
