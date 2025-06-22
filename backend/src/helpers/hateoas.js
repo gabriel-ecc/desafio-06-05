@@ -7,7 +7,7 @@ const HATEOAS = async (entity, data) => {
     stock += item.stock;
     return {
       joya: item.nombre,
-      href: `http://localhost:${port}/${entity}/${item.id}`,
+      href: `http://localhost:${port}/${entity}/joya/${item.id}`,
     };
   });
 
